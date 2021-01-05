@@ -1,0 +1,99 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Test</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+          crossorigin="anonymous">
+</head>
+
+<body >
+    
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-8">
+
+            <div class="cointainer" style="margin: 10ch;">
+                <h1 class="h3 mb-3 font-weight-normal text-center">
+                    Если введенное число больше 7, то выводится “Привет”
+                </h1>
+                <div class="form-group">
+                    <input type="text" class="form-control"
+                           style="height: 50px;" placeholder="Number"
+                           id="input1"
+                           required>
+                    <output type="text" class="form-control"
+                           style="height: 50px;" placeholder="Result" 
+                           id="output1">
+                </div>
+                <button id="submit1" class="btn btn-primary btn-lg btn-block">
+                    Submit
+                </button>
+            </div>
+     
+            <div class="cointainer" style="margin: 10ch;">
+                <h1 class="h3 mb-3 font-weight-normal text-center">
+                    Если введенное имя совпадает с Вячеслав, то выводится “Привет, Вячеслав”, если нет, то выводится "Нет такого имени"
+                </h1>
+                <div class="form-group">
+                    <input type="text" class="form-control"
+                           style="height: 50px;" placeholder="Name"
+                           id="input2"
+                           required>
+                    <output type="text" class="form-control"
+                           style="height: 50px;" placeholder="Result"
+                           id="output2">
+                </div>
+                <button id="submit2" class="btn btn-primary btn-lg btn-block">
+                    Submit
+                </button>
+            </div>
+
+            <div class="cointainer" style="margin: 10ch;">
+                <h1 class="h3 mb-3 font-weight-normal text-center">
+                    Выводится элементы массива кратные 3
+                    (Вевсти через запятую)
+                </h1>
+                <div class="form-group">
+                    <input type="text" class="form-control"                           style="height: 50px;" placeholder="Array"
+                           id="input3"
+                           required>
+                    <output type="text" class="form-control"
+                           style="height: 50px;" placeholder="Result"
+                           id="output3">
+                </div>
+                <button id="submit3" class="btn btn-primary btn-lg btn-block">
+                    Submit
+                </button>
+            </div>
+
+            <div class="cointainer" style="margin: 10ch;">
+                <h1 class="h3 mb-3 font-weight-normal text-center">
+                    Правильная скобочная последовательность
+                </h1>
+                <div class="form-group">
+                    <input type="text" class="form-control"
+                           style="height: 50px;" placeholder="Array"
+                           id="input4"
+                           required>
+                    <div   type="text" class="form-control"
+                           style="height: 200px;" placeholder="Result"
+                           id="output4"></textarea>
+                </div>
+                <button id="submit4" class="btn btn-primary btn-lg btn-block">
+                    Submit
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="Test.js"></script>
+</body>
+</html>  
