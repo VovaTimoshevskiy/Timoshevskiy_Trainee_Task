@@ -101,7 +101,7 @@ document.getElementById('submit3').addEventListener('click', result_third);
        }
        else
        {
-        document.getElementById('output4').innerHTML += 'Баланс соблюден';
+        document.getElementById('output4').innerHTML += 'Баланс соблюден<br>';
        }
 }
 
