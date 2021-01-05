@@ -43,68 +43,56 @@ function result_third() {
 document.getElementById('submit3').addEventListener('click', result_third);
 /******************************************************************************/
 
-    function isValid() {
+  function isValid() {
+  let str = document.getElementById('input4').value.split('');
+  let stack = [];
+  let incorect = [];
+  let map = {
+      '(': ')',
+      '[': ']',
+  }
+  for (var prop in map) 
+  {
+  for (let i = 0; i < str.length; i++) 
+  {
+    if (str[i] === prop) {
+        stack.push(str[i]);
+    }
     
-    let str = document.getElementById('input4').value.split('');
-     
-    let openSquare = [];
-    let openRound = [];
-    let closeBrakets = [];
-    let map = {
-        '(': ')',
-        '[': ']',
-    }
+    else if(str[i] === map[prop]){
 
-    for (let i = 0; i < str.length; i++) {
-        if (str[i] === '(') {
-              openRound[i]=str[i];
+        let last = stack[stack.length-1];
+
+        if (str[i] !== map[last]) 
+        {
+          incorect.push(str[i]);
         }
-        else if(str[i] === ')'){
-            let last = openRound[openRound.length-1];
-
-            if (str[i] !== map[last]) {closeBrakets[i]=str[i]}
-            else{openRound.pop()}
+        else
+        {
+          stack.pop();
         }
     }
+}
+};
 
-    for (let i = 0; i < str.length; i++) {
-        if (str[i] === '[') {
-            openSquare[i]=str[i];
-        }
-        else if(str[i] === ']'){
-            let last = openSquare[openSquare.length-1];
+  if (stack.length === 0 && incorect.length === 0) 
+  {
+    document.getElementById('output4').innerHTML += "Баланс соблюден<br>";
+  }
+  else
+  {
+    stack.forEach(function(element) {
+      document.getElementById('output4').innerHTML += "Нет пары для "+ element + "<br>";
+    });
+    incorect.forEach(function(element) {
+      document.getElementById('output4').innerHTML += "Нет пары для "+ element + "<br>";
+    });
 
-            if (str[i] !== map[last]) {closeBrakets[i]=str[i];}
-            else{openSquare.pop()}
-        }
-    }
-        
-       function clean(obj){
-       let newArr = [];
-        obj.forEach(function(item, index) {
-             if(item !== undefined)
-             {
-               index++;
-               document.getElementById('output4').innerHTML += 'индекс ' + index + ' ' + 'скобка ' + item + '<br>';
-             }
-          });
-       } 
-
-       if(openSquare.length !== 0 || openRound.length !== 0 || closeBrakets.length !== 0)
-       {
-       document.getElementById('output4').innerHTML += 'Лишние:<br>';
-       clean(openSquare);  
-       clean(openRound);  
-       clean(closeBrakets);
-       
-       document.getElementById('output4').innerHTML += 'Совет:<br>' + 'удалить лишние скобки для баланса или изменить одну скобку на другую при равных количестве.';
-       }
-       else
-       {
-        document.getElementById('output4').innerHTML += 'Баланс соблюден<br>';
-       }
+    document.getElementById('output4').innerHTML += "Совет: Удалить не имеющие пары скобок или добавить пару<br>";
+  }
 }
 
 document.getElementById('submit4').addEventListener('click', isValid);
 /******************************************************************************/
+
 
