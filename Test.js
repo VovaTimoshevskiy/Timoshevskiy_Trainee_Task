@@ -90,7 +90,7 @@ document.getElementById('submit3').addEventListener('click', result_third);
           });
        } 
 
-       if(openSquare.length !== 0 && openRound.length !== 0 && closeBrakets.length !== 0)
+       if(openSquare.length !== 0 || openRound.length !== 0 || closeBrakets.length !== 0)
        {
        document.getElementById('output4').innerHTML += 'Лишние:<br>';
        clean(openSquare);  
