@@ -88,14 +88,23 @@ document.getElementById('submit3').addEventListener('click', result_third);
                document.getElementById('output4').innerHTML += 'индекс ' + index + ' ' + 'скобка ' + item + '<br>';
              }
           });
-       }   
-       document.getElementById('output4').innerHTML += 'Лишние:<br>'
+       } 
+
+       if(openSquare.length !== 0 && openRound.length !== 0 && closeBrakets.length !== 0)
+       {
+       document.getElementById('output4').innerHTML += 'Лишние:<br>';
        clean(openSquare);  
        clean(openRound);  
        clean(closeBrakets);
        
-       document.getElementById('output4').innerHTML += 'Совет:<br>' + 'удалить лишние скобки для баланса или изменить одну скобку на другую при равных количестве.'
+       document.getElementById('output4').innerHTML += 'Совет:<br>' + 'удалить лишние скобки для баланса или изменить одну скобку на другую при равных количестве.';
+       }
+       else
+       {
+        document.getElementById('output4').innerHTML += 'Баланс соблюден';
+       }
 }
 
 document.getElementById('submit4').addEventListener('click', isValid);
 /******************************************************************************/
+
